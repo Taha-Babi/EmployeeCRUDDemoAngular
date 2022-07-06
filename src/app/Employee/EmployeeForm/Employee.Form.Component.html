@@ -1,0 +1,22 @@
+
+<form novalidate #form ="ngForm" (submit) ="onSubmit(form)">
+  <input type="hidden" name="EmployeeID" class="form-control" [value]="Service.employeeFormData.EmployeeID" />
+  <div class="form-group">
+    <label>Employee Name</label>
+    <input type="text" name="EmployeeName" #EmployeeName="ngModel" [(ngModel)]="Service.employeeFormData.EmployeeName" class="form-control"
+           required [class.invalid]="EmployeeName.invalid && EmployeeName.touched" maxlength="20"/>
+  </div>
+  <div class="form-group">
+    <label>Employee Salary</label>
+    <input type="number" name="EmployeeSalary" #EmployeeSalary="ngModel" class="form-control" [(ngModel)]="Service.employeeFormData.EmployeeSalary"
+           required [class.invalid]="EmployeeSalary.invalid && EmployeeSalary.touched" min="1"/>
+  </div>
+  <div class="form-group">
+    <label>Employee Intending Date</label>
+    <input type="date" name="IntendedDate" #IntendedDate="ngModel" class="form-control" [(ngModel)]="Service.employeeFormData.IntendedDate"
+           required [class.invalid]="IntendedDate.invalid && IntendedDate.touched"/>
+  </div>
+  <div class="form-group">
+    <button class="btn-info btn-block btn-lg" [disabled]="form.invalid">Submit</button>
+  </div>
+</form>

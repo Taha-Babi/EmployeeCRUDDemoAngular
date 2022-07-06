@@ -1,0 +1,33 @@
+
+<div class="text-center jumbotron p-3 ">
+  <h1>Employees CRUD</h1>
+</div>
+<div class="row">
+  <div class="col">
+    <EmployeeForm>
+      Please Wait Form....
+    </EmployeeForm>
+  </div>
+  <div class="col">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>Employee Number</th>
+          <th>Employee Name</th>
+          <th>Employee Salary</th>
+          <th>Employee Intended Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeeList">
+          <td>{{employee.EmployeeID}}</td>
+          <td>{{employee.EmployeeName}}</td>
+          <td>{{employee.EmployeeSalary}}</td>
+          <td>{{employee.IntendedDate}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
